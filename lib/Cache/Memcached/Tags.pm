@@ -13,7 +13,7 @@ use base 'Cache::Memcached';
 
 use vars qw($VERSION);
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub add_tags {
   my $self = shift;
@@ -27,7 +27,7 @@ sub add_tags {
 
     die "tag_add command returned ERROR, please make sure your memcached servers support tags: http://code.google.com/p/memcached-tags/"
       if $res eq "ERROR\r\n";
-warn $res;
+
     return 0 unless $res eq "TAG_STORED\r\n";
   }
 
